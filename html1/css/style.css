@@ -6,6 +6,7 @@
 
 ul {
     list-style: none;
+    font-size: 0;
 }
 
 .bordered {
@@ -26,6 +27,10 @@ ul {
 }
 
 .header li:first-child {
+    background-color: #B7B7B7;
+}
+
+.header li:hover {
     background-color: #B7B7B7;
 }
 
