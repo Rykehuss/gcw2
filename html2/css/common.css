@@ -14,6 +14,11 @@ img {
     height: auto;
 }
 
+a {
+    color: #000;
+    text-decoration: none;
+}
+
 .bordered {
     border-bottom: 2px solid #acacac;
 }
@@ -21,7 +26,7 @@ img {
 .wrapper {
     max-width: 1366px;
     margin: 0 auto;
-    padding: 41px 100px;
+    padding: 20px 100px;
 }
 
 .header {
@@ -29,10 +34,6 @@ img {
     display: flex;
     justify-content: space-between;
     align-items: center;
-}
-
-.header li:first-child {
-    background-color: #B7B7B7;
 }
 
 .header li:hover {
@@ -50,7 +51,7 @@ img {
 }
 
 .menu {
-    padding-right: 150px;
+    /*padding-right: 150px;*/
 }
 
 
@@ -60,15 +61,12 @@ img {
 }
 
 .menu a {
-    color: #000;
-    text-decoration: none;
     font-size: 18px;
 }
 
 .info {
     /*padding-top: 90px;*/
-    font-size: 16px;
-
+    font-size: 14px;
 }
 
 .info p {
@@ -83,7 +81,7 @@ img {
 
 .info span {
     font-weight: 900;
-    min-width: 80px;
+    min-width: 70px;
     display: inline-block;
 }
 
@@ -91,30 +89,11 @@ img {
     display: flex;
     justify-content: center;
     margin: 0 auto;
-    padding-top: 140px;
+    padding-top: 60px;
     padding-bottom: 60px;
-    font-size: 30px;
+    font-size: 16px;
 }
 
-.main {
-    /*display: flex;*/
-    /*align-content: right;*/
-}
-
-.photo {
-    width: 300px;
-    height: 400px;
-    overflow: hidden;
-    float: left;
-    margin-right: 20px;
-
-}
-
-.bio {
-    text-align: justify;
-}
-
-.bio h2 {
-    font-size: 24px;
-    margin: 10px 0;
+.selected {
+    background-color: #B7B7B7;
 }

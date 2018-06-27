@@ -1,0 +1,26 @@
+.main {
+    /*display: flex;*/
+    /*align-content: right;*/
+}
+
+.photo {
+    width: 300px;
+    height: 400px;
+    overflow: hidden;
+    float: left;
+    margin-right: 20px;
+
+}
+
+.bio {
+    text-align: justify;
+}
+
+.bio h2 {
+    font-size: 24px;
+    margin: 10px 0;
+}
+
+.bio p {
+    text-indent: 25px;
+}

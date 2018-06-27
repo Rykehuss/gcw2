@@ -1,0 +1,12 @@
+.main {
+    display: flex;
+    justify-content: right;
+}
+
+.job-photo {
+    margin-right: 20px;
+}
+
+.text {
+    text-align: justify;
+}
