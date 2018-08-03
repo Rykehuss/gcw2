@@ -1,0 +1,84 @@
+.button {
+  width: 162px;
+  height: 46px;
+  color: white;
+  display: flex;
+  justify-content: center;
+  cursor: pointer;
+  text-transform: uppercase;
+
+  &-next {
+    margin-left: 15px;
+  }
+
+  &-red {
+    background-color: $theme_red;
+  }
+
+  &-blue {
+    background-color: $theme_blue;
+  }
+
+  &-green {
+    background-color: $theme_green;
+  }
+
+  &-blue-border {
+    border: 2px solid $theme_blue;
+
+    p {
+      color: $theme_blue;
+    }
+  }
+
+  &-circled {
+    border-radius: 23px;
+  }
+
+  &-textGray {
+    color: #7f7f7f;
+  }
+
+  &-w50 {
+    width: 50%;
+  }
+
+  &-w196px {
+    width: 196px;
+  }
+
+  &-w220px {
+    width: 220px;
+  }
+
+  &-arrow {
+    i {
+      font-size: 20px;
+      line-height: 46px;
+      color: white;
+      margin-left: 15px;
+    }
+  }
+
+  p {
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 46px;
+    text-align: center;
+    display: inline-block;
+    text-transform: uppercase;
+    font-family: $font-galanoGrotesque;
+  }
+
+
+  &-min {
+    width: 115px;
+    height: 30px;
+    border-radius: 5px;
+
+    p {
+      font-size: 12px;
+      line-height: 30px;
+    }
+  }
+}

@@ -1,0 +1,83 @@
+@import 'smart-grid';
+
+* {
+  font-family: Arial, sans-serif;
+}
+
+@include reset();
+
+.items {
+  background-color: #0D122B;
+  @include wrapper-full;
+}
+
+.wrapper {
+  @include wrapper();
+  @include row-flex();
+  @include col();
+  @include size(12);
+}
+
+.item {
+
+  @include col();
+  @include size(3);
+  @include size-md(6);
+  @include size-xs(10);
+  @include shift-xs-left(1);
+
+  background-color: white;
+  border-radius: 10px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding: 30px 0;
+
+  &__img {
+    width: 70%;
+    overflow: hidden;
+    margin-bottom: 20px;
+  }
+
+  &__name {
+    font-size: 14px;
+    font-weight: 700;
+    flex-grow: 0;
+  }
+
+  &__price {
+    font-size: 14px;
+    font-weight: 700;
+    margin: 5px 0;
+    flex-grow: 0;
+
+    &-discount {
+      color: gray;
+
+      &:after {
+        content: "("attr(discount)")";
+        color: orange;
+      }
+    }
+    &-unactive {
+      color: gray;
+    }
+  }
+
+  &__btn {
+    background-color: red;
+    color: white;
+    width: 70%;
+    height: 34px;
+    border-radius: 17px;
+    text-align: center;
+    line-height: 30px;
+    margin-top: 10px;
+
+    &-unactive {
+      background-color: gray;
+    }
+  }
+}
