@@ -1,0 +1,139 @@
+body {
+    background-color: darkgrey;
+    display: flex;
+    height: 96vh;
+}
+
+.wrapper {
+    max-width: 400px;
+    width: 80%;
+    /*border: 1px solid red;*/
+    margin: 0 auto;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+.find {
+    margin-bottom: 20px;
+    overflow: hidden;
+    display: flex;
+    padding: 5px;
+    background-color: white;
+    border: 1px solid gray;
+    flex-shrink: 0;
+}
+
+.find i {
+    font-size: 26px;
+    color: gray;
+    line-height: 30px;
+    padding: 0 10px;
+}
+
+.find input {
+    width: 100%;
+    line-height: 30px;
+    border: 0px solid white;
+    padding-left: 10px;
+    font-size: 16px;
+}
+
+.clearFilter {
+    cursor: pointer;
+}
+
+.contacts {
+    display: flex;
+    flex-direction: column;
+    /*border: 1px solid grey;*/
+    /*height: calc(100vh - 150px);*/
+    overflow-y: scroll;
+    cursor: pointer;
+}
+
+.contact {
+    border: solid 1px gray;
+    font-family: Arial, sans-serif;
+    font-size: 20px;
+    color: black;
+    background-color: white;
+    padding: 10px 15px;
+    border-radius: 10px;
+    overflow: hidden;
+    flex-shrink: 0;
+}
+
+.add {
+    background-color: lightgreen;
+    border: 1px solid gray;
+    font-size: 30px;
+    font-weight: 800;
+    text-align: center;
+    margin-top: 20px;
+    cursor: pointer;
+    flex-shrink: 0;
+    padding: 10px 15px;
+}
+
+.edit {
+    border: 2px solid gray;
+    border-radius: 15px;
+    /*display: flex;*/
+    flex-direction: column;
+    overflow: hidden;
+    padding: 20px 5px;
+    background-color: white;
+    position: absolute;
+    top: 25vh;
+    width: 80%;
+    margin: 0 auto;
+    display: none;
+    align-self: center;
+}
+
+.edit .pair {
+    font-size: 20px;
+    color: black;
+    padding: 5px 10px;
+    overflow: hidden;
+    display: flex;
+}
+
+.edit .pair label {
+    margin: 0 5px;
+    line-height: 30px;
+}
+
+.edit .pair input {
+    width: 100%;
+    line-height: 26px;
+    font-size: 20px;
+    padding-left: 10px;
+}
+
+.buttons {
+    display: flex;
+}
+
+.save,
+.cancel {
+    font-size: 20px;
+    padding: 5px 10px;
+    text-align: center;
+    font-weight: 800;
+    width: 80%;
+    align-self: center;
+    margin: 0 5px;
+    margin-top: 20px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.save {
+    background-color: lightgreen;
+}
+
+.cancel {
+    background-color: indianred;
+}
