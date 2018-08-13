@@ -120,6 +120,16 @@ var contacts = [];
         filter();
     }
 
+    function del() {
+        var editDiv = document.getElementsByClassName('edit')[0];
+        var index = editDiv.getAttribute("index");
+        contacts.splice(index, 1);
+
+        saveToStorage();
+        editDiv.style.display = "none";
+        filter();
+    }
+
     function edit(event) {
         var editDiv = document.getElementsByClassName('edit')[0];
         editDiv.style.display = "flex";
@@ -137,6 +147,7 @@ var contacts = [];
             name.value = contacts[index].name;
             phone.value = contacts[index].phone;
         }
+        name.focus();
     }
 
     function filter() {
@@ -178,7 +189,7 @@ var contacts = [];
 
     function saveToStorage() {
         contacts.sort(function(a, b) {
-            return (a.name > b.name);
+            return (a.name.toLowerCase() > b.name.toLowerCase());
         });
         localStorage.setItem('contacts', JSON.stringify(contacts));
     }
@@ -210,6 +221,9 @@ var contacts = [];
 
         var saveButton = document.getElementsByClassName('save')[0];
         saveButton.addEventListener("click", save);
+
+        var deleteButton = document.getElementsByClassName('delete')[0];
+        deleteButton.addEventListener("click", del);
 
         var clearFilterButton = document.getElementsByClassName('clearFilter')[0];
         clearFilterButton.addEventListener("click", clearFilter);

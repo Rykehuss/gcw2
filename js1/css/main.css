@@ -125,7 +125,8 @@ body {
 }
 
 .save,
-.cancel {
+.cancel,
+.delete {
     font-size: 20px;
     padding: 5px 10px;
     text-align: center;
@@ -140,6 +141,10 @@ body {
 
 .save {
     background-color: lightgreen;
+}
+
+.delete {
+    background-color: deepskyblue;
 }
 
 .cancel {
