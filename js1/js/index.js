@@ -1,89 +1,93 @@
 var initContacts = [
     {
-        "name":"Vitalii",
-        "phone":"+380501122333",
-        "show":"1"
+        "name": "Vitalii",
+        "phone": "+380501122333",
+        "show": "1"
     },
     {
-        "name":"Sveta",
-        "phone":"+380501122333",
-        "show":"1"
+        "name": "Sveta",
+        "phone": "+380501122333",
+        "show": "1"
     },
     {
-        "name":"Baba Petya",
-        "phone":"+380501252333",
-        "show":"1"
+        "name": "Baba Petya",
+        "phone": "+380501252333",
+        "show": "1"
     },
     {
-        "name":"Ordo",
-        "phone":"+380508892333",
-        "show":"1"
+        "name": "Ordo",
+        "phone": "+380508892333",
+        "show": "1"
     },
     {
-        "name":"Totto",
-        "phone":"+380501232333",
-        "show":"1"
+        "name": "Totto",
+        "phone": "+380501232333",
+        "show": "1"
     },
     {
-        "name":"Barmaid",
-        "phone":"+380501252333",
-        "show":"1"
+        "name": "Barmaid",
+        "phone": "+380501252333",
+        "show": "1"
     },
     {
-        "name":"Yokko",
-        "phone":"+380456122333",
-        "show":"1"
+        "name": "Yokko",
+        "phone": "+380456122333",
+        "show": "1"
     },
     {
-        "name":"Yet another contact",
-        "phone":"+380501122333",
-        "show":"1"
+        "name": "Yet another contact",
+        "phone": "+380501122333",
+        "show": "1"
     },
     {
-        "name":"Moose",
-        "phone":"+380501122333",
-        "show":"1"
+        "name": "Moose",
+        "phone": "+380501122333",
+        "show": "1"
     },
     {
-        "name":"Boss",
-        "phone":"+380501122333",
-        "show":"1"
+        "name": "Boss",
+        "phone": "+380501122333",
+        "show": "1"
     },
     {
-        "name":"UnderBoss",
-        "phone":"+380501122333",
-        "show":"1"
+        "name": "UnderBoss",
+        "phone": "+380501122333",
+        "show": "1"
     },
     {
-        "name":"Poppy",
-        "phone":"+380501122333",
-        "show":"1"
+        "name": "Poppy",
+        "phone": "+380501122333",
+        "show": "1"
     },
     {
-        "name":"Kiki",
-        "phone":"+380501122333",
-        "show":"1"
+        "name": "Kiki",
+        "phone": "+380501122333",
+        "show": "1"
     },
     {
-        "name":"Chotki",
-        "phone":"+380501122333",
-        "show":"1"
+        "name": "Chotki",
+        "phone": "+380501122333",
+        "show": "1"
     },
     {
-        "name":"Dude",
-        "phone":"+380501122333",
-        "show":"1"
+        "name": "Dude",
+        "phone": "+380501122333",
+        "show": "1"
     },
 
     {
-        "name":"Vasyl",
-        "phone":"+380501122333",
-        "show":"1"
+        "name": "Vasyl",
+        "phone": "+380501122333",
+        "show": "1"
     }];
 
 var contacts = [];
 
-(function(){
+String.prototype.splice = function(idx, rem, str) {
+    return this.slice(0, idx) + str + this.slice(idx + Math.abs(rem));
+};
+
+(function () {
     window.onload = function () {
         console.log('window is loaded');
     };
@@ -152,7 +156,7 @@ var contacts = [];
 
     function filter() {
         var str = document.getElementById("filter").value;
-        contacts.forEach(function(contact) {
+        contacts.forEach(function (contact) {
             if (contact.name.toLowerCase().includes(str.toLowerCase())) {
                 contact.show = 1;
             }
@@ -175,7 +179,7 @@ var contacts = [];
             contactsDiv.removeChild(contactsDiv.firstChild);
         }
 
-        contacts.forEach(function(contact, index) {
+        contacts.forEach(function (contact, index) {
             if (contact.show == 1) {
                 var contactDiv = document.createElement('div');
                 contactDiv.classList.add("contact");
@@ -188,7 +192,7 @@ var contacts = [];
     }
 
     function saveToStorage() {
-        contacts.sort(function(a, b) {
+        contacts.sort(function (a, b) {
             return (a.name.toLowerCase() > b.name.toLowerCase());
         });
         localStorage.setItem('contacts', JSON.stringify(contacts));
@@ -197,12 +201,33 @@ var contacts = [];
     function loadFromStorage() {
         contacts = JSON.parse(localStorage.getItem("contacts") || "[]");
         console.log("# of contacts: " + contacts.length);
-        contacts.sort(function(a, b) {
+        contacts.sort(function (a, b) {
             return (a.name > b.name);
         });
-        contacts.forEach(function(contact) {
+        contacts.forEach(function (contact) {
             contact.show = 1;
         })
+    }
+
+    function phoneValidation(event) {
+        var phoneInput = document.getElementById('phone');
+        var text = phoneInput.value;
+        if (text.length > 0) {
+            var rawPhone = text.replace(/[() ]/g, '');
+
+            var lastChar = rawPhone[rawPhone.length - 1];
+            console.log('Last char: ' + lastChar);
+            if (isNaN(lastChar) === true) {
+                rawPhone = text.substring(0, rawPhone.length - 1);
+                console.log("Error: its not a number!");
+            }
+            // if (rawPhone.length >= 3) {
+            //     rawPhone = rawPhone.splice(0, 0, '(');
+            //     rawPhone = rawPhone.splice(4, 0, ') ');
+            // }
+
+            phoneInput.value = rawPhone;
+        }
     }
 
     document.addEventListener("DOMContentLoaded", function () {
@@ -230,6 +255,9 @@ var contacts = [];
 
         var addButton = document.getElementsByClassName('add')[0];
         addButton.addEventListener("click", edit);
+
+        var phoneField = document.getElementById('phone');
+        phoneField.addEventListener("input", phoneValidation);
 
     });
 })();
