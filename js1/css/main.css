@@ -87,7 +87,7 @@ body {
 .edit {
     border: 2px solid gray;
     border-radius: 15px;
-    display: flex;
+    /*display: flex;*/
     flex-direction: column;
     overflow: hidden;
     padding: 20px 5px;
@@ -96,7 +96,7 @@ body {
     top: 25vh;
     width: 80%;
     margin: 0 auto;
-    /*display: none;*/
+    display: none;
     align-self: center;
 }
 
